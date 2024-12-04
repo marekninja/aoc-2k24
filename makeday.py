@@ -12,7 +12,14 @@ if __name__ == "__main__":
     with open(dir / "inputs.py", "w") as f:
         f.write("")
 
-    with open(dir / "solve.py", "w") as f:
+    with open(dir / "solve-part1.py", "w") as f:
+        contents = """#AoC solution. Day: {args.day}
+from __future__ import absolute_import
+from inputs import
+"""
+        f.write(contents)
+
+    with open(dir / "solve-part2.py", "w") as f:
         contents = """#AoC solution. Day: {args.day}
 from __future__ import absolute_import
 from inputs import
