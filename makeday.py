@@ -9,7 +9,7 @@ args = parser.parse_args()
 if __name__ == "__main__":
     dir = Path("./") / str(args.day)
     os.mkdir(dir)
-    with open(dir / "inputs.py", "w") as f:
+    with open(dir / "inputs.txt", "w") as f:
         f.write("")
 
     with open(dir / "solve-part1.py", "w") as f:
