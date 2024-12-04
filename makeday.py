@@ -8,20 +8,12 @@ args = parser.parse_args()
 
 if __name__ == "__main__":
     dir = Path("./") / str(args.day)
+    contents = f"# AoC solution. Day: {args.day}"
+
     os.mkdir(dir)
     with open(dir / "inputs.txt", "w") as f:
         f.write("")
 
-    with open(dir / "solve-part1.py", "w") as f:
-        contents = """#AoC solution. Day: {args.day}
-from __future__ import absolute_import
-from inputs import
-"""
-        f.write(contents)
-
-    with open(dir / "solve-part2.py", "w") as f:
-        contents = """#AoC solution. Day: {args.day}
-from __future__ import absolute_import
-from inputs import
-"""
-        f.write(contents)
+    for i in [1,2]:
+        with open(dir / f"solve-part{i}.py", "w") as f:
+            f.write(contents + f"; Part {i}")
