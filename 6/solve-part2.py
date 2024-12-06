@@ -32,11 +32,10 @@ def make_move(lines, posx, posy, direction):
         return lines, posx, posy, direction, True
     
 
-def solve_map(lines, posx, posy, direction, reference_positions=None):
+def solve_map(lines, posx, posy, direction):
     # get unique positions
     positions = set()
     end = False
-    similar_path = True
     while not end:
         # draw_map("*",lines)
         lines, posx, posy, direction, end = make_move(lines, posx, posy, direction)
