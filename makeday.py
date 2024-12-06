@@ -11,9 +11,15 @@ if __name__ == "__main__":
     contents = f"# AoC solution. Day: {args.day}"
 
     os.mkdir(dir)
-    with open(dir / "inputs.txt", "w") as f:
-        f.write("")
+    for i in ["","_small"]:
+        with open(dir / f"inputs{i}.txt", "w") as f:
+            f.write("")
 
+    solve_content =f"""
+
+with open("./{args.day}/inputs.txt", "r") as f:
+    lines = f.readlines()
+"""
     for i in [1,2]:
         with open(dir / f"solve-part{i}.py", "w") as f:
-            f.write(contents + f"; Part {i}")
+            f.write(contents + f"; Part {i}" + solve_content)
